@@ -1,3 +1,9 @@
 [submodule "ORB_SLAM3"]
 	path = ORB_SLAM3
 	url = https://github.com/jakob321/ORB_SLAM3
+[submodule "ml-depth-pro"]
+	path = ml-depth-pro
+	url = git@github.com:jakob321/ml-depth-pro.git
+[submodule "gz-sim-environment"]
+	path = gz-sim-environment
+	url = git@github.com:jakob321/gz-sim-environment.git
