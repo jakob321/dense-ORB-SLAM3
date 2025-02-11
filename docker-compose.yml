@@ -1,7 +1,40 @@
+# version: "3"
+# services:
+#   test_image:
+#     image: test_image
+#     volumes:
+#       # Time sync
+#       - /etc/timezone:/etc/timezone:rw
+#       - /etc/localtime:/etc/localtime:rw
+#       # ROS Workspaces
+#       - ./container_root/:/root/
+#       - ./orb_slam3_ros2_wrapper/:/root/colcon_ws/src/orb_slam3_ros2_wrapper/
+#       - ./orb_slam3_map_generator/:/root/colcon_ws/src/orb_slam3_map_generator/
+#       - ./slam_msgs/:/root/colcon_ws/src/slam_msgs/
+#       #- ./ml-depth-pro/:/root/colcon_ws/src/ml-depth-pro/
+#       - ./ORB_SLAM3/:/home/orb/ORB_SLAM3/
+#     privileged: true
+#     network_mode: host
+#     ipc: host
+#     stdin_open: true
+#     tty: true
+#     environment:
+#       - DISPLAY
+#       - NVIDIA_VISIBLE_DEVICES=all  # Expose all GPUs
+#       - NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics  # CUDA + OpenGL support
+#     deploy:
+#       resources:
+#         reservations:
+#           devices:
+#             - driver: nvidia
+#               count: all
+#               capabilities: [gpu]
+#     entrypoint: /bin/bash
+
 version: "3"
 services:
   orb_slam3_22_humble:
-    image: orb-slam3-humble:22.04
+    image: test_image
     volumes:
       #full dev
       - /dev:/dev:rw
@@ -15,6 +48,7 @@ services:
       - ./orb_slam3_ros2_wrapper/:/root/colcon_ws/src/orb_slam3_ros2_wrapper/
       - ./orb_slam3_map_generator/:/root/colcon_ws/src/orb_slam3_map_generator/
       - ./slam_msgs/:/root/colcon_ws/src/slam_msgs/
+      - ./ml-depth-pro/:/root/colcon_ws/src/ml-depth-pro/
       # - ./ORB_SLAM3/:/home/orb/ORB_SLAM3/
     privileged: true
     network_mode: host

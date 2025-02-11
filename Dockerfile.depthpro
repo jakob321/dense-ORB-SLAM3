@@ -1,0 +1,69 @@
+#----------------------------------------------------------
+#       Building dependencies for ml-depth-pro
+#----------------------------------------------------------
+
+FROM osrf/ros:humble-desktop-full-jammy AS ml-depth-pro
+RUN apt-get update
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y gnupg2 curl lsb-core vim wget python3-pip libpng16-16 libjpeg-turbo8 libtiff5
+#COPY ml-depth-pro/pyproject.toml /root/colcon_ws/src/ml-depth-pro/pyproject.toml
+#COPY ml-depth-pro/setup.py /root/colcon_ws/src/ml-depth-pro/setup.py
+COPY ml-depth-pro/ /root/colcon_ws/src/ml-depth-pro/
+WORKDIR /root/colcon_ws/src/ml-depth-pro/
+RUN pip install --no-cache-dir -e .
+RUN pip install torch
+RUN pip install torchvision
+RUN pip install matplotlib
+RUN pip install opencv-python
+RUN pip install scipy
+RUN pip install tqdm
+RUN pip install pillow
+    
+    #----------------------------------------------------------
+    #       Creating final image
+    #----------------------------------------------------------
+    # FROM osrf/ros:humble-desktop-full-jammy
+    
+    # # Set working directory
+    # WORKDIR /root
+    
+    # RUN apt-get update
+    
+    # ARG DEBIAN_FRONTEND=noninteractive
+    # RUN apt-get install -y gnupg2 curl lsb-core vim wget python3-pip libpng16-16 libjpeg-turbo8 libtiff5
+    
+    # # Copy ORB-SLAM3 and ROS 2 workspace from the build stage
+    # COPY --from=orb-slam3 /home/orb/ORB_SLAM3 /home/orb/ORB_SLAM3
+    # COPY --from=orb-slam3 /root/colcon_ws /root/colcon_ws
+    
+    # # Copy ML Depth Pro dependencies from the second build stage
+    # COPY --from=ml-depth-pro /root/colcon_ws/src/ml-depth-pro /root/colcon_ws/src/ml-depth-pro
+    
+    # COPY --from=ml-depth-pro /usr/lib/python3/dist-packages /usr/lib/python3/dist-packages
+    # COPY --from=ml-depth-pro /usr/local/bin /usr/local/bin
+    
+    # # Ensure Python recognizes 'src/' for ml-depth-pro
+    # ENV PYTHONPATH="/root/colcon_ws/src/ml-depth-pro/src:$PYTHONPATH"
+    
+    
+    # # Install dependencies for the final image
+    # RUN apt-get update && apt-get install -y \
+    #     ros-humble-pcl-ros \
+    #     ros-humble-nav2-common \
+    #     x11-apps \
+    #     nano \
+    #     tmux \
+    #     && rm -rf /var/lib/apt/lists/*
+    
+    # # Ensure ROS 2 environment is sourced automatically
+    # RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+    # RUN echo "source /root/colcon_ws/install/setup.bash" >> /root/.bashrc
+    
+    # Set up permissions and create entrypoint script
+    # COPY ./container_root/shell_scripts/entrypoint.sh /root/
+    # RUN chmod +x /root/entrypoint.sh
+    
+    # # Default entrypoint
+    # ENTRYPOINT ["/root/entrypoint.sh"]
+    # CMD ["bash"]
+        

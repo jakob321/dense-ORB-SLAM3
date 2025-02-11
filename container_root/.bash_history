@@ -498,3 +498,178 @@ ls
 tmux
 ls
 ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py 
+cd /root/colcon_ws/
+colcon build --symlink-install
+source install/setup.bash
+xeyes
+ros2 launch orb_slam3_ros2_wrapper unirobot.launch.py
+colcon build --symlink-install
+exit
+nvidia-smi
+exit
+nvidia-smi
+exit
+ls
+pwd
+cd colcon_ws/src/
+ls
+ros2
+ls
+cd ml-depth-pro/
+pip install -e .
+pip install --no-cache-dir -e .
+nano setup.py
+pip install --no-cache-dir -e .
+exit
+ls
+cd colcon_ws/src/
+ls
+cd ml-depth-pro/
+depth-pro-run -i ./data/example.jpg
+ls
+python3 test5.py 
+python -c "import depth_pro; print(depth_pro.__file__)"
+pip install -e .
+apt install pip
+exit
+pip
+cd colcon_ws/src/
+cd ml-depth-pro/
+python3
+python3 test5.py 
+pip install -e .
+exit
+cd colcon_ws/src/ml-depth-pro/
+python3 test5.py 
+head -n 5 test5.py 
+depth-pro-run -i ./data/example.jpg
+python3
+pip install torch
+exit
+cd colcon_ws/src/ml-depth-pro/
+python3 test5.py 
+pip install torch
+exit
+cd colcon_ws/src/ml-depth-pro/
+python3
+python --version
+python3 --version
+cd /usr/local/lib/python3.10/site-packages
+pip show torch
+pip show numpy
+exit
+pip show torch
+pip show numpy
+cd /usr/lib/python3/dist-packages
+ls
+ls | grep to
+ls | grep scipy
+ls | grep pillow
+ls | grep tq
+ls | grep open
+ls
+python -c "import sys; print(sys.path)"
+python3 -c "import sys; print(sys.path)"
+python3 -c "import sys; print(sys.path)" | grep /usr/local/lib/
+exit
+ls
+cd colcon_ws/src/ml-depth-pro/
+ls
+pip which torch
+python3
+ls
+ls -al
+exit
+ls
+exit
+cd colcon_ws/src/ml-depth-pro/
+ls
+python3
+xit
+exit
+cd colcon_ws/src/ml-depth-pro/
+ls
+exit
+cd colcon_ws/src/
+ls
+cd ml-depth-pro/
+ls
+pwd
+exit
+python3
+ls
+cd colcon_ws/src/ml-depth-pro/
+conda
+python3 -c "import rclpy; print('ROS 2 Python works')"
+python3 -v
+python3 --version
+python3
+ls
+exit
+cd colcon_ws/src/ml-depth-pro/
+ls
+exit
+cd colcon_ws/src/ml-depth-pro/
+ls
+exit
+cd colcon_ws/src/ml-depth-pro/abc/
+ls
+exit
+cd colcon_ws/src/ml-depth-pro/
+ls
+exit
+cd colcon_ws/
+colcon build --symlink-install
+colcon build
+ls
+cd src/
+ls
+cd /home/orb/ORB_SLAM3/
+ls
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+ls
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+cd src/
+ls
+cd ml-depth-pro/
+ls
+cd ..
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+exit
+cd /root/colcon_ws/
+colcon build --symlink-install
+ls
+cd src/
+ls
+cd ml-depth-pro/
+ls
+exit
+cd /root/colcon_ws/
+cd src/
+ls
+cd ml-depth-pro/
+ls
+python3
+ls
+python3 test5.py 
+pip install pyvista
+python3 test5.py 
+exit
